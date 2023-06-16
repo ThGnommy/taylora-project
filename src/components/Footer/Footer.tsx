@@ -72,7 +72,7 @@ export const Footer = () => {
       <section className="relative">
         {step !== 1 && (
           <div
-            className="absolute -left-[70px] top-1/2 -translate-y-1/2 rotate-180 bg-[#ededed] fill-custom-grey hover:opacity-80 rounded-full p-3 cursor-pointer"
+            className={`absolute -left-[70px] top-1/2 -translate-y-1/2 rotate-180 bg-[#ededed] fill-custom-grey hover:opacity-80 rounded-full p-3 cursor-pointer transition-all duration-200`}
             onClick={prevStep}
           >
             <ArrowSvg height="32px" width="32px" viewBox="0 0 16 32" />
@@ -83,7 +83,7 @@ export const Footer = () => {
           onClick={nextStep}
         >
           <ul
-            className={`absolute flex flex-col left-8 items-start gap-4 h-full w-full transition-transform ${handleButtonText}`}
+            className={`absolute flex flex-col left-8 items-start gap-4 h-full w-full transition-transform ${handleButtonText} duration-200`}
           >
             <li className="text-white text-sm">COLORS</li>
             <li className="text-white text-sm">ACCESSORIES</li>

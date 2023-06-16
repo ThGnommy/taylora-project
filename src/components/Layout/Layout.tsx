@@ -8,7 +8,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <main className="h-screen">
+    <main className="flex flex-col justify-center items-center w-full">
       <Header />
       {children}
       <Footer />

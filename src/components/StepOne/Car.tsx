@@ -33,7 +33,7 @@ export const Car = () => {
   return (
     <div
       className={`relative flex flex-col justify-center items-center py-11 ${
-        selected ? 'border-custom-yellow' : 'border-[#ededed]'
+        selected ? 'border-custom-yellow' : 'border-light-grey'
       } border-2 rounded cursor-pointer`}
       onClick={() => setSelected((prevState) => !prevState)}
     >
@@ -44,7 +44,7 @@ export const Car = () => {
         className={`absolute bottom-8 transition-all duration-150 rounded-full ${
           selected
             ? 'bg-custom-yellow w-11 h-11'
-            : 'scale-75 bg-white border border-[#ededed]'
+            : 'scale-75 bg-white border border-light-grey'
         }`}
       >
         <CheckSvg />
