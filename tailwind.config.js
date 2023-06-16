@@ -10,6 +10,9 @@ export default {
         'custom-grey': '#5d7c89',
         'custom-yellow': '#ffb500',
       },
+      boxShadow: {
+        footer: '0 0 39px rgba(0,0,0,.1)',
+      },
     },
   },
   plugins: [],
