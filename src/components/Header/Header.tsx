@@ -1,4 +1,3 @@
-import React from 'react'
 import { useApp } from '../../contexts/App/useApp'
 import { Step } from '../../contexts/App/types'
 
@@ -28,7 +27,7 @@ export const Header = () => {
       : 'text-custom-grey'
 
   const disabledColor =
-    'text-[rgb(93,124,137)]/50 hover:text-[rgb(93,124,137)]/50'
+    '!text-[rgb(93,124,137)]/50 !hover:text-[rgb(93,124,137)]/50'
 
   return (
     <div className="flex flex-col mb-[70px]">

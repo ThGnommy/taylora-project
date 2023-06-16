@@ -38,7 +38,9 @@ export const Car = ({ name, starterPrice, defaultImage }: ICar) => {
     >
       <h2 className="text-4xl font-bold">{name}</h2>
       <img className="w-96 h-auto mx-12 my-5" src={defaultImage} alt="BMW i3" />
-      <p className="mb-10 text-custom-grey">from {starterPrice}</p>
+      <p className="mb-10 text-custom-grey">
+        from ${Number(starterPrice).toLocaleString().replace(',', '.')}
+      </p>
       <div
         className={`absolute bottom-8 transition-all duration-150 rounded-full ${isSelected}`}
       >

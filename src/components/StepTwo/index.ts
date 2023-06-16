@@ -1,3 +1,3 @@
-import { StepTwo } from "./StepTwo";
+import { StepTwo } from './StepTwo'
 
-default export StepTwo
+export default StepTwo

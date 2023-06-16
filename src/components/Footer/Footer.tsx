@@ -1,10 +1,13 @@
-import React from 'react'
 import { useApp } from '../../contexts/App/useApp'
 import { Step } from '../../contexts/App/types'
 import { ArrowSvg } from '../Utility/Icons'
+import carsData from '../../cars-data.json'
+import { useEffect, useState } from 'react'
 
 export const Footer = () => {
   const { step, handleStep, totalPrice, selectedCar } = useApp()
+
+  const [currentCarImage, setCurrentCarImage] = useState<string>('')
 
   const nextStep = () => {
     if (step === 4 || selectedCar === null) return
@@ -31,19 +34,42 @@ export const Footer = () => {
       ? `-translate-y-[90px]`
       : `translate-y-[18px]`
 
-  const disabledColor = 'bg-[rgb(93,124,137)]/50'
+  const disabledColor = '!bg-[rgb(93,124,137)]/50'
 
   const handleButtonBackground = selectedCar === null && disabledColor
 
+  useEffect(() => {
+    const getDefaultImage = () => {
+      const currentCar = carsData.filter((car) => car.name === selectedCar)
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+
+      const defaultImage = currentCar[0]?.default_image
+
+      if (defaultImage !== undefined) {
+        const img = `${import.meta.env.BASE_URL}${defaultImage}`
+        setCurrentCarImage(img)
+      }
+    }
+
+    getDefaultImage()
+  }, [selectedCar])
+
   return (
     <footer className="w-full h-[100px] py-1 px-8 fixed bg-white bottom-0 flex justify-between items-center shadow-footer select-none">
-      <section className="flex justify-center items-center">
+      <section className="flex items-center">
         <img
-          className="w-48 pr-7"
-          src="	https://codyhouse.co/demo/product-builder/img/product01_col01.jpg"
+          className={`w-48 pr-7 transition-transform duration-200 ${
+            selectedCar === null && '-translate-x-48'
+          }`}
+          src={currentCarImage}
           alt=""
         />
-        <div className="flex flex-col justify-center items-start border-l pl-7 h-full">
+        <div
+          className={`flex flex-col justify-center items-start border-l pl-7 h-full transition-transform duration-200 ${
+            selectedCar === null && '-translate-x-56'
+          }`}
+        >
           <p className="text-custom-grey">Total</p>
           <p className="text-3xl">${totalPrice}</p>
         </div>
