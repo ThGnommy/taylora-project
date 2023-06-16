@@ -1,0 +1,60 @@
+[
+  {
+    "name": "BMW i3",
+    "starter_price": "42400",
+    "colors": [
+      {
+        "name": "White",
+        "price": 0
+      },
+      {
+        "name": "Mineral Grey",
+        "price": "550"
+      },
+      {
+        "name": "Orange Metallic",
+        "price": "550"
+      }
+    ],
+    "accessories": [
+      { "name": "BMW Charging Station", "price": "1080" },
+      {
+        "name": "BMW Maintenance Program Upgrade",
+        "price": "1.895"
+      },
+      {
+        "name": "1 Year BMW Maintenance Program Upgrade",
+        "price": "975"
+      }
+    ]
+  },
+  {
+    "name": "BMW i8",
+    "starter_price": "140700",
+    "colors": [
+      {
+        "name": "Grey Metallic",
+        "price": 0
+      },
+      {
+        "name": "White Perl Metallic",
+        "price": "1.800"
+      }
+    ],
+    "accessories": [
+      { "name": "BMW Laserlight", "price": "6300" },
+      {
+        "name": "BMW Charging Station",
+        "price": "1.080"
+      },
+      {
+        "name": "BMW Maintenance Program Upgrade",
+        "price": "1.895"
+      },
+      {
+        "name": "1 Year BMW Maintenance Program Upgrade",
+        "price": "975"
+      }
+    ]
+  }
+]

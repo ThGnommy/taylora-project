@@ -1,8 +1,14 @@
 import React from 'react'
 import { useApp } from '../../contexts/App/useApp'
+import { Step } from '../../contexts/App/types'
 
 export const Header = () => {
-  const { step, handleStep } = useApp()
+  const { step, handleStep, selectedCar } = useApp()
+
+  const handleSelection = (step: Step) => {
+    if (selectedCar === null) return
+    handleStep(step)
+  }
 
   const modelsColor =
     step === 1
@@ -21,32 +27,41 @@ export const Header = () => {
       ? 'text-custom-yellow border-custom-yellow border-b-2'
       : 'text-custom-grey'
 
+  const disabledColor =
+    'text-[rgb(93,124,137)]/50 hover:text-[rgb(93,124,137)]/50'
+
   return (
     <div className="flex flex-col mb-[70px]">
       <h1 className="text-4xl font-bold mt-10 mb-7">Product Builder</h1>
       <nav className="flex justify-center">
         <ul className="flex text-sm font-semibold gap-2 box-border tracking-[0.1em]">
           <li
-            onClick={() => handleStep(1)}
+            onClick={() => handleSelection(1)}
             className={`transition-colors px-3 py-2 border-custom-yellow ${modelsColor} hover:text-custom-yellow`}
           >
             <a href="#">MODELS</a>
           </li>
           <li
-            onClick={() => handleStep(2)}
-            className={`transition-colors px-3 py-2 border-custom-yellow ${colorsColor} hover:text-custom-yellow`}
+            onClick={() => handleSelection(2)}
+            className={`${
+              selectedCar === null && disabledColor
+            } transition-colors px-3 py-2 border-custom-yellow ${colorsColor} hover:text-custom-yellow`}
           >
             <a href="#">COLORS</a>
           </li>
           <li
-            onClick={() => handleStep(3)}
-            className={`transition-colors px-3 py-2 border-custom-yellow ${accessoriesColor} hover:text-custom-yellow`}
+            onClick={() => handleSelection(3)}
+            className={`${
+              selectedCar === null && disabledColor
+            } transition-colors px-3 py-2 border-custom-yellow ${accessoriesColor} hover:text-custom-yellow`}
           >
             <a href="#">ACCESSORIES</a>
           </li>
           <li
-            onClick={() => handleStep(4)}
-            className={`transition-colors px-3 py-2 border-custom-yellow ${summaryColor} hover:text-custom-yellow`}
+            onClick={() => handleSelection(4)}
+            className={`${
+              selectedCar === null && disabledColor
+            } transition-colors px-3 py-2 border-custom-yellow ${summaryColor} hover:text-custom-yellow`}
           >
             <a href="#">SUMMARY</a>
           </li>
