@@ -5,23 +5,29 @@
     "default_image": "public/images/cars/bmw_i3/white.png",
     "colors": [
       {
+        "variant": "white",
         "name": "White",
-        "price": 0
+        "price": "0",
+        "image": "public/images/cars/bmw_i3/white.png"
       },
       {
+        "variant": "black",
         "name": "Mineral Grey",
-        "price": "550"
+        "price": "550",
+        "image": "public/images/cars/bmw_i3/black.png"
       },
       {
+        "variant": "orange",
         "name": "Orange Metallic",
-        "price": "550"
+        "price": "550",
+        "image": "public/images/cars/bmw_i3/orange.png"
       }
     ],
     "accessories": [
       { "name": "BMW Charging Station", "price": "1080" },
       {
         "name": "BMW Maintenance Program Upgrade",
-        "price": "1.895"
+        "price": "1895"
       },
       {
         "name": "1 Year BMW Maintenance Program Upgrade",
@@ -35,23 +41,27 @@
     "default_image": "public/images/cars/bmw_i8/black.png",
     "colors": [
       {
+        "variant": "grey",
         "name": "Grey Metallic",
-        "price": 0
+        "price": "1800",
+        "image": "public/images/cars/bmw_i8/black.png"
       },
       {
+        "variant": "black",
         "name": "White Perl Metallic",
-        "price": "1.800"
+        "price": "0",
+        "image": "public/images/cars/bmw_i8/grey.png"
       }
     ],
     "accessories": [
       { "name": "BMW Laserlight", "price": "6300" },
       {
         "name": "BMW Charging Station",
-        "price": "1.080"
+        "price": "1080"
       },
       {
         "name": "BMW Maintenance Program Upgrade",
-        "price": "1.895"
+        "price": "1895"
       },
       {
         "name": "1 Year BMW Maintenance Program Upgrade",

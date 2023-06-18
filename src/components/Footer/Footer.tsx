@@ -5,7 +5,8 @@ import carsData from '../../cars-data.json'
 import { useEffect, useState } from 'react'
 
 export const Footer = () => {
-  const { step, handleStep, totalPrice, selectedCar } = useApp()
+  const { step, handleStep, totalPrice, selectedCar, findSelectedCar } =
+    useApp()
 
   const [currentCarImage, setCurrentCarImage] = useState<string>('')
 
@@ -40,11 +41,10 @@ export const Footer = () => {
 
   useEffect(() => {
     const getDefaultImage = () => {
-      const currentCar = carsData.filter((car) => car.name === selectedCar)
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
 
-      const defaultImage = currentCar[0]?.default_image
+      const defaultImage = findSelectedCar()[0]?.default_image
 
       if (defaultImage !== undefined) {
         const img = `${import.meta.env.BASE_URL}${defaultImage}`
@@ -53,7 +53,7 @@ export const Footer = () => {
     }
 
     getDefaultImage()
-  }, [selectedCar])
+  }, [findSelectedCar, selectedCar])
 
   return (
     <footer className="w-full h-[100px] py-1 px-8 fixed bg-white bottom-0 flex justify-between items-center shadow-footer select-none">
