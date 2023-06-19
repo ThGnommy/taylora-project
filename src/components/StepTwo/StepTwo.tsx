@@ -54,7 +54,7 @@ export const StepTwo = () => {
   }, [color, colorList, selectedCar])
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mt-[220px]">
       <img className="w-[750px] h-auto" src={img} alt="" />
       <section className="flex gap-6 mt-8">
         {colorList.map((c: ColorListProps) => {

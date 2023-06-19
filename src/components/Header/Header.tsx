@@ -30,7 +30,11 @@ export const Header = () => {
     '!text-[rgb(93,124,137)]/50 !hover:text-[rgb(93,124,137)]/50'
 
   return (
-    <div className="flex flex-col mb-[70px] shadow-white">
+    <div
+      className="fixed top-0 w-full bg-white flex flex-col
+      after:w-full after:h-[70px] after:bg-white-fadeout after:top-full after:absolute
+      "
+    >
       <h1 className="text-4xl font-bold mt-10 mb-7">Product Builder</h1>
       <nav className="flex justify-center">
         <ul className="flex text-sm font-semibold gap-2 box-border tracking-[0.1em]">
@@ -66,6 +70,7 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
+      {/* <div className="after:w-full after:h-[70px] after:bg-white-fadeout after:absolute after:content-none"></div> */}
     </div>
   )
 }

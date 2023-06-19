@@ -26,6 +26,10 @@ export default {
       animation: {
         'custom-bounce': 'checkBounce .6s ease-in-out',
       },
+      backgroundImage: {
+        'white-fadeout':
+          'linear-gradient(to bottom,white,rgba(255,255,255,0));',
+      },
     },
   },
   plugins: [],

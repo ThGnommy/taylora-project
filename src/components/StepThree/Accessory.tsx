@@ -1,4 +1,3 @@
-import { useCallback, useEffect } from 'react'
 import { useApp } from '../../contexts/App/useApp'
 import { AccessoryCheckSvg } from '../Utility/Icons'
 import { AccessoryProps } from './types'

@@ -41,10 +41,11 @@ export const Car = ({ name, starterPrice, defaultImage }: ICar) => {
   }
 
   useEffect(() => {
-    if (typeof selectedCar === 'string' && selectedCar.includes(name)) {
+    if (typeof selectedCar === 'string' && selectedCar.length !== 0) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const color = findSelectedCar()[0]?.colors[0]
+
       setSelectedColor(color)
     } else {
       setSelectedColor(null)
