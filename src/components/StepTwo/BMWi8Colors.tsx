@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import { Tooltip } from '../Utility/Tooltip'
 import { ColorListProps, ColorType } from './types'
 import { useApp } from '../../contexts/App/useApp'
@@ -14,22 +14,7 @@ export const BMWi8Colors = ({
   colorState: ColorType
   handleColorSelection: (color: ColorType) => void
 }) => {
-  const { findSelectedCar, setSelectedPriceColor } = useApp()
-
-  // const colorSelection = () => {
-  //   // prevent reselection
-  //   if (colorName === colorState) return
-
-  //   handleColorSelection(colorName)
-  //   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //   // @ts-ignore
-  //   const colors = findSelectedCar()[0]?.colors
-  //   const selectedColor = colors.find(
-  //     (color: ColorListProps) => color.variant === colorState
-  //   )
-
-  //   setSelectedPriceColor(Number(selectedColor.price))
-  // }
+  const { findSelectedCar, setSelectedColor } = useApp()
 
   const colorName =
     name === 'Grey Metallic'
@@ -52,12 +37,12 @@ export const BMWi8Colors = ({
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const colors = findSelectedCar()[0]?.colors
-    const selectedColor = colors.find(
+    const currentColor = colors.find(
       (color: ColorListProps) => color.variant === colorState
     )
 
-    setSelectedPriceColor(Number(selectedColor.price))
-  }, [colorName, colorState, findSelectedCar, setSelectedPriceColor])
+    setSelectedColor(currentColor)
+  }, [colorName, colorState, findSelectedCar, setSelectedColor])
 
   useEffect(() => {
     colorSelection()

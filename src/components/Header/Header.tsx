@@ -30,7 +30,7 @@ export const Header = () => {
     '!text-[rgb(93,124,137)]/50 !hover:text-[rgb(93,124,137)]/50'
 
   return (
-    <div className="flex flex-col mb-[70px]">
+    <div className="flex flex-col mb-[70px] shadow-white">
       <h1 className="text-4xl font-bold mt-10 mb-7">Product Builder</h1>
       <nav className="flex justify-center">
         <ul className="flex text-sm font-semibold gap-2 box-border tracking-[0.1em]">

@@ -24,7 +24,11 @@ export const ArrowSvg = ({
   </svg>
 )
 
-export const CheckSvg = ({ selectedCar }: { selectedCar: string | null }) => (
+export const CarCheckSvg = ({
+  selectedCar,
+}: {
+  selectedCar: string | null
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
@@ -34,6 +38,36 @@ export const CheckSvg = ({ selectedCar }: { selectedCar: string | null }) => (
     viewBox="0 0 44 44"
     className={`inline transition-opacity duration-150 ${
       selectedCar ? 'opacity-100' : 'opacity-0'
+    }`}
+  >
+    <g transform="translate(10, 10)">
+      <polyline
+        fill="none"
+        stroke="#ffffff"
+        strokeWidth="2"
+        strokeLinecap="square"
+        strokeMiterlimit="10"
+        points="2,12 9,19 22,6 &#10;&#9;"
+        strokeLinejoin="miter"
+      />
+    </g>
+  </svg>
+)
+
+export const AccessoryCheckSvg = ({
+  accessorySelected,
+}: {
+  accessorySelected: boolean
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    x="0px"
+    y="0px"
+    width="44px"
+    height="44px"
+    viewBox="0 0 44 44"
+    className={`transition-opacity duration-150 ${
+      accessorySelected ? 'opacity-100' : 'opacity-0'
     }`}
   >
     <g transform="translate(10, 10)">

@@ -1,12 +1,19 @@
 import { useApp } from '../../contexts/App/useApp'
 import { Step } from '../../contexts/App/types'
 import { ArrowSvg } from '../Utility/Icons'
-import carsData from '../../cars-data.json'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export const Footer = () => {
-  const { step, handleStep, totalPrice, selectedCar, findSelectedCar } =
-    useApp()
+  const {
+    step,
+    handleStep,
+    setTotalPrice,
+    totalPrice,
+    selectedCar,
+    selectedColor,
+    findSelectedCar,
+    selectedAccessories,
+  } = useApp()
 
   const [currentCarImage, setCurrentCarImage] = useState<string>('')
 
@@ -39,24 +46,24 @@ export const Footer = () => {
 
   const handleButtonBackground = selectedCar === null && disabledColor
 
-  useEffect(() => {
-    const getDefaultImage = () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+  const getDefaultImage = useCallback(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
 
-      const defaultImage = findSelectedCar()[0]?.default_image
+    const defaultImage = findSelectedCar()[0]?.default_image
 
-      if (defaultImage !== undefined) {
-        const img = `${import.meta.env.BASE_URL}${defaultImage}`
-        setCurrentCarImage(img)
-      }
+    if (defaultImage !== undefined) {
+      const img = `${import.meta.env.BASE_URL}${defaultImage}`
+      setCurrentCarImage(img)
     }
+  }, [findSelectedCar])
 
+  useEffect(() => {
     getDefaultImage()
-  }, [findSelectedCar, selectedCar])
+  }, [getDefaultImage])
 
   return (
-    <footer className="w-full h-[100px] py-1 px-8 fixed bg-white bottom-0 flex justify-between items-center shadow-footer select-none">
+    <footer className="w-full h-[100px] py-1 px-8 z-20 fixed bg-white bottom-0 flex justify-between items-center shadow-footer select-none">
       <section className="flex items-center">
         <img
           className={`w-48 pr-7 transition-transform duration-200 ${

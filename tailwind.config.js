@@ -14,6 +14,18 @@ export default {
       boxShadow: {
         footer: '0 0 39px rgba(0,0,0,.1)',
       },
+      keyframes: {
+        checkBounce: {
+          '0%': { transform: 'scale(1) translateY(-50%)' },
+          '25%': { transform: 'scale(1.1) translateY(-50%)' },
+          '50%': { transform: 'scale(1) translateY(-50%)' },
+          '75%': { transform: 'scale(1.05) translateY(-50%)' },
+          '100%': { transform: 'scale(1) translateY(-50%)' },
+        },
+      },
+      animation: {
+        'custom-bounce': 'checkBounce .6s ease-in-out',
+      },
     },
   },
   plugins: [],

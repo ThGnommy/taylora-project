@@ -14,7 +14,13 @@ export const BMWi3Colors = ({
   colorState: ColorType
   handleColorSelection: (color: ColorType) => void
 }) => {
-  const { findSelectedCar, setSelectedPriceColor } = useApp()
+  const {
+    findSelectedCar,
+    setSelectedColor,
+    selectedColor,
+    totalPrice,
+    setTotalPrice,
+  } = useApp()
 
   const colorName =
     name === 'White'
@@ -41,15 +47,28 @@ export const BMWi3Colors = ({
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const colors = findSelectedCar()[0]?.colors
-    const selectedColor = colors.find(
+    const currentColor = colors.find(
       (color: ColorListProps) => color.variant === colorState
     )
-    setSelectedPriceColor(Number(selectedColor.price))
-  }, [colorName, colorState, findSelectedCar, setSelectedPriceColor])
+    setSelectedColor(currentColor)
+  }, [colorName, colorState, findSelectedCar, setSelectedColor])
 
   useEffect(() => {
     colorSelection()
   }, [colorSelection])
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    // const colors = findSelectedCar()[0]?.colors
+    // const currentColor = colors.find(
+    //   (color: ColorListProps) => color.variant === colorState
+    // )
+
+    const updatedPrice: number = totalPrice + Number(selectedColor?.price)
+
+    setTotalPrice(updatedPrice)
+  }, [selectedColor?.price, setTotalPrice, totalPrice])
 
   return (
     <Tooltip message={tooltipText}>
@@ -63,6 +82,3 @@ export const BMWi3Colors = ({
     </Tooltip>
   )
 }
-
-// black #303539
-// orange #cf5a16

@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useCallback } from 'react'
 import bmwWhite from '../../assets/cars/bmw_i3/white.png'
 import bmwOrange from '../../assets/cars/bmw_i3/orange.png'
 import bmwBlack from '../../assets/cars/bmw_i3/black.png'
@@ -11,7 +11,13 @@ import { BMWi3Colors } from './BMWi3Colors'
 import { BMWi8Colors } from './BMWi8Colors'
 
 export const StepTwo = () => {
-  const { findSelectedCar, selectedCar } = useApp()
+  const {
+    findSelectedCar,
+    selectedCar,
+    selectedColor,
+    totalPrice,
+    setTotalPrice,
+  } = useApp()
 
   const [img, setImg] = useState(
     selectedCar === 'BMW i3' ? bmwWhite : bmw2Black
@@ -77,6 +83,3 @@ export const StepTwo = () => {
     </div>
   )
 }
-
-// black #303539
-// orange #cf5a16
