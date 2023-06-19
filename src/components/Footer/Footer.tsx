@@ -64,7 +64,7 @@ export const Footer = () => {
 
   return (
     <footer className="w-full h-[100px] py-1 px-8 z-20 fixed bg-white bottom-0 flex justify-between items-center shadow-footer select-none">
-      <section className="flex items-center">
+      <section className="flex items-center h-full">
         <img
           className={`w-48 pr-7 transition-transform duration-200 ${
             selectedCar === null && '-translate-x-48'

@@ -19,7 +19,7 @@ export default {
           '0%': { transform: 'scale(1) translateY(-50%)' },
           '25%': { transform: 'scale(1.1) translateY(-50%)' },
           '50%': { transform: 'scale(1) translateY(-50%)' },
-          '75%': { transform: 'scale(1.05) translateY(-50%)' },
+          '75%': { transform: 'scale(1.02) translateY(-50%)' },
           '100%': { transform: 'scale(1) translateY(-50%)' },
         },
       },

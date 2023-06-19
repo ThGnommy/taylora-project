@@ -31,7 +31,7 @@ export const Header = () => {
 
   return (
     <div
-      className="fixed top-0 w-full bg-white flex flex-col
+      className="fixed top-0 z-10 w-full bg-white flex flex-col
       after:w-full after:h-[70px] after:bg-white-fadeout after:top-full after:absolute
       "
     >

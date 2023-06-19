@@ -21,7 +21,7 @@ export const StepThree = () => {
   }, [findSelectedCar, setSelectedAccessories])
 
   return (
-    <div className="w-full max-w-[1000px] flex flex-col gap-5 mb-[200px] mt-[220px]">
+    <div className="w-full max-w-[1000px] flex flex-col gap-5 mb-[200px] mt-[170px]">
       {accessoriesList.map((accessory) => (
         <Accessory
           id={accessory.id}

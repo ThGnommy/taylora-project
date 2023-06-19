@@ -17,12 +17,16 @@ export const Summary = () => {
       : 'bg-white'
 
   return (
-    <div className="w-full max-w-[1000px] flex flex-col justify-center items-center px-12 pb-28 mt-[220px]">
+    <div className="w-full max-w-[1000px] flex flex-col justify-center items-center px-12 pb-28 mt-[170px]">
       <div className="flex flex-col justify-center items-center mb-9">
         <hr className="w-8 border mb-2" />
         <p className="text-lg font-bold tracking-widest">MODEL</p>
       </div>
-      <img className="max-w-[700px] mb-8" src={selectedColor?.image} alt="" />
+      <img
+        className="max-w-[700px] w-full h-auto mb-8"
+        src={selectedColor?.image}
+        alt=""
+      />
       <h2 className="text-[40px] font-bold">{selectedCar}</h2>
       <p className="text-custom-grey text-lg mb-16">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
