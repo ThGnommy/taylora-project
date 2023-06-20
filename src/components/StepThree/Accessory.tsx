@@ -52,18 +52,18 @@ export const Accessory = ({ id, name, price }: AccessoryProps) => {
 
   return (
     <div
-      className={`relative flex justify-start items-center p-9 w-full border-2 rounded cursor-pointer transition ${
+      className={`relative flex lg:flex-row flex-col lg:justify-start justify-start lg:h-auto h-44 items-center p-9 w-full border-2 rounded cursor-pointer transition ${
         isSelected ? 'border-custom-yellow' : 'border-light-grey'
       }`}
       onClick={handleAccessory}
     >
-      <p className="text-[26px] font-bold">{name}</p>
+      <p className="lg:text-[26px] text-lg font-bold">{name}</p>
       <div>
-        <p className="absolute -translate-y-1/2 origin-center top-1/2 right-[102px] text-[26px] font-bold">
+        <p className="lg:absolute relative lg:-translate-y-1/2 lg:origin-center lg:top-1/2 lg:right-[102px] lg:text-[26px] text-base lg:font-bold font-normal">
           ${formattedPrice}
         </p>
         <div
-          className={`absolute -translate-y-1/2 origin-center right-8 top-1/2 rounded-md transition-all duration-150 ${checkStyles}`}
+          className={`absolute -translate-y-1/2 translate-x-1/2 lg:right-12 right-1/2 lg:top-1/2 top-32 rounded-md transition-all duration-150 ${checkStyles}`}
         >
           <AccessoryCheckSvg accessorySelected={isSelected} />
         </div>

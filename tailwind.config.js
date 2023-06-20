@@ -16,11 +16,11 @@ export default {
       },
       keyframes: {
         checkBounce: {
-          '0%': { transform: 'scale(1) translateY(-50%)' },
-          '25%': { transform: 'scale(1.1) translateY(-50%)' },
-          '50%': { transform: 'scale(1) translateY(-50%)' },
-          '75%': { transform: 'scale(1.02) translateY(-50%)' },
-          '100%': { transform: 'scale(1) translateY(-50%)' },
+          '0%': { transform: 'scale(1) translateY(-50%) translateX(50%)' },
+          '25%': { transform: 'scale(1.1) translateY(-50%) translateX(50%)' },
+          '50%': { transform: 'scale(1) translateY(-50%) translateX(50%)' },
+          '75%': { transform: 'scale(1.02) translateY(-50%) translateX(50%)' },
+          '100%': { transform: 'scale(1) translateY(-50%) translateX(50%)' },
         },
       },
       animation: {
