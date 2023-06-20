@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Tooltip } from '../Utility/Tooltip'
 import { ColorListProps, ColorType } from './types'
 import { useApp } from '../../contexts/App/useApp'
@@ -51,24 +51,13 @@ export const BMWi3Colors = ({
       (color: ColorListProps) => color.variant === colorState
     )
     setSelectedColor(currentColor)
-  }, [colorName, colorState, findSelectedCar, setSelectedColor])
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [colorState])
 
   useEffect(() => {
     colorSelection()
   }, [colorSelection])
-
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    // const colors = findSelectedCar()[0]?.colors
-    // const currentColor = colors.find(
-    //   (color: ColorListProps) => color.variant === colorState
-    // )
-
-    const updatedPrice: number = totalPrice + Number(selectedColor?.price)
-
-    setTotalPrice(updatedPrice)
-  }, [selectedColor?.price, setTotalPrice, totalPrice])
 
   return (
     <Tooltip message={tooltipText}>

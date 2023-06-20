@@ -1,3 +1,4 @@
+import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion'
 import { Layout } from './components/Layout/Layout'
 import StepOne from './components/StepOne'
 import StepThree from './components/StepThree'
@@ -10,10 +11,12 @@ const App = () => {
 
   return (
     <Layout>
-      {step === 1 && <StepOne />}
-      {step === 2 && <StepTwo />}
-      {step === 3 && <StepThree />}
-      {step === 4 && <Summary />}
+      <AnimatePresence>
+        {step === 1 && <StepOne />}
+        {step === 2 && <StepTwo />}
+        {step === 3 && <StepThree />}
+        {step === 4 && <Summary />}
+      </AnimatePresence>
     </Layout>
   )
 }

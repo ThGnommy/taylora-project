@@ -2,16 +2,12 @@ import { Accessory } from './Accessory'
 import { useApp } from '../../contexts/App/useApp'
 import { useEffect, useState } from 'react'
 import { AccessoryProps } from './types'
+import { easeInOut, motion } from 'framer-motion'
 
 export const StepThree = () => {
   const { findSelectedCar, setSelectedAccessories } = useApp()
 
   const [accessoriesList, setAccessoriesList] = useState<AccessoryProps[]>([])
-
-  // const updateTotalPrice = () => {
-  //   const priceConverted = Number(selectedColor?.price)
-  //   setTotalPrice(totalPrice + priceConverted)
-  // }
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -21,7 +17,17 @@ export const StepThree = () => {
   }, [findSelectedCar, setSelectedAccessories])
 
   return (
-    <div className="w-full max-w-[1000px] flex flex-col gap-5 mb-[200px] mt-[170px]">
+    <motion.div
+      key="step-three"
+      initial={{ opacity: 0, x: 20 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
+      }}
+      exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
+      className="w-full max-w-[1000px] flex flex-col gap-5 mb-[200px] mt-[170px]"
+    >
       {accessoriesList.map((accessory) => (
         <Accessory
           id={accessory.id}
@@ -30,6 +36,6 @@ export const StepThree = () => {
           price={accessory.price}
         />
       ))}
-    </div>
+    </motion.div>
   )
 }

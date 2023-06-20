@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useApp } from '../../contexts/App/useApp'
-import { ColorListProps } from '../StepTwo/types'
 import { CarCheckSvg } from '../Utility/Icons'
+import { motion } from 'framer-motion'
 
 interface ICar {
   name: string
@@ -55,7 +55,7 @@ export const Car = ({ name, starterPrice, defaultImage }: ICar) => {
   const formattedPrice = Number(starterPrice).toLocaleString().replace(',', '.')
 
   return (
-    <div
+    <motion.div
       className={`relative flex flex-col justify-center items-center py-11 ${
         selectedCar === name ? 'border-custom-yellow' : 'border-light-grey'
       } border-2 rounded cursor-pointer`}
@@ -69,6 +69,6 @@ export const Car = ({ name, starterPrice, defaultImage }: ICar) => {
       >
         <CarCheckSvg selectedCar={selectedCar} />
       </div>
-    </div>
+    </motion.div>
   )
 }

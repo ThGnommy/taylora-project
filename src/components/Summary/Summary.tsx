@@ -1,4 +1,5 @@
 import { useApp } from '../../contexts/App/useApp'
+import { easeInOut, motion } from 'framer-motion'
 
 export const Summary = () => {
   const { selectedColor, selectedCar, selectedAccessories } = useApp()
@@ -17,7 +18,17 @@ export const Summary = () => {
       : 'bg-white'
 
   return (
-    <div className="w-full max-w-[1000px] flex flex-col justify-center items-center px-12 pb-28 mt-[170px]">
+    <motion.div
+      key="summary"
+      initial={{ opacity: 0, x: 20 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
+      }}
+      exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
+      className="w-full max-w-[1000px] flex flex-col justify-center items-center px-12 pb-28 mt-[170px]"
+    >
       <div className="flex flex-col justify-center items-center mb-9">
         <hr className="w-8 border mb-2" />
         <p className="text-lg font-bold tracking-widest">MODEL</p>
@@ -67,6 +78,6 @@ export const Summary = () => {
           </li>
         )}
       </ul>
-    </div>
+    </motion.div>
   )
 }

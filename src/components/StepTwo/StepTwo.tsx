@@ -1,4 +1,4 @@
-import { Fragment, useCallback } from 'react'
+import { Fragment } from 'react'
 import bmwWhite from '../../assets/cars/bmw_i3/white.png'
 import bmwOrange from '../../assets/cars/bmw_i3/orange.png'
 import bmwBlack from '../../assets/cars/bmw_i3/black.png'
@@ -9,15 +9,11 @@ import { useApp } from '../../contexts/App/useApp'
 import { ColorListProps, ColorType } from './types'
 import { BMWi3Colors } from './BMWi3Colors'
 import { BMWi8Colors } from './BMWi8Colors'
+import { easeInOut, motion } from 'framer-motion'
 
 export const StepTwo = () => {
-  const {
-    findSelectedCar,
-    selectedCar,
-    selectedColor,
-    totalPrice,
-    setTotalPrice,
-  } = useApp()
+  const { findSelectedCar, selectedCar, setTotalPrice, selectedColor } =
+    useApp()
 
   const [img, setImg] = useState(
     selectedCar === 'BMW i3' ? bmwWhite : bmw2Black
@@ -39,6 +35,14 @@ export const StepTwo = () => {
   }, [findSelectedCar])
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const defaultPrice = findSelectedCar()[0].starter_price
+
+    setTotalPrice(Number(defaultPrice) + Number(selectedColor?.price))
+  }, [findSelectedCar, selectedColor?.price, setTotalPrice])
+
+  useEffect(() => {
     const handleImage = () => {
       if (selectedCar === 'BMW i3') {
         if (color === 'white') setImg(bmwWhite)
@@ -54,9 +58,19 @@ export const StepTwo = () => {
   }, [color, colorList, selectedCar])
 
   return (
-    <div className="flex flex-col justify-center items-center mt-[170px]">
-      <img className="w-[750px] h-auto" src={img} alt="" />
-      <section className="flex gap-6 mt-8">
+    <motion.div
+      key="step-two"
+      initial={{ opacity: 0, x: 20 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
+      }}
+      exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
+      className="flex flex-col justify-center items-center mt-[170px]"
+    >
+      <motion.img className="w-[750px] h-auto" src={img} alt="" />
+      <motion.section className="flex gap-6 mt-8">
         {colorList.map((c: ColorListProps) => {
           return (
             <Fragment key={c.name}>
@@ -79,7 +93,7 @@ export const StepTwo = () => {
             </Fragment>
           )
         })}
-      </section>
-    </div>
+      </motion.section>
+    </motion.div>
   )
 }
