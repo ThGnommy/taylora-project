@@ -52,7 +52,7 @@ export const BMWi8Colors = ({
     <Tooltip message={tooltipText}>
       <div
         onClick={() => handleColorSelection(colorName)}
-        className={`w-[50px] h-[50px] rounded-full ring-2 ring-offset-2 ${handleColors} ${
+        className={`lg:w-[50px] lg:h-[50px] w-[30px] h-[30px] rounded-full ring-2 ring-offset-2 ${handleColors} ${
           colorName === colorState ? 'ring-custom-yellow' : 'ring-light-grey'
         } cursor-pointer
   `}
