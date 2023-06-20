@@ -27,7 +27,7 @@ export const Summary = () => {
         transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
       }}
       exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
-      className="w-full max-w-[1000px] flex flex-col justify-center items-center px-12 pb-28 mt-[170px]"
+      className="w-full max-w-[1000px] flex flex-col justify-center lg:items-center items-start px-12 pb-28 mt-[170px]"
     >
       <div className="flex flex-col justify-center items-center mb-9">
         <hr className="w-8 border mb-2" />
@@ -39,7 +39,7 @@ export const Summary = () => {
         alt=""
       />
       <h2 className="text-[40px] font-bold">{selectedCar}</h2>
-      <p className="text-custom-grey text-lg mb-16">
+      <p className="text-left lg:text-center text-custom-grey text-lg mb-16">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit
         saepe facilis hic, unde, numquam vel. Blanditiis sed laboriosam ratione
         nulla atque molestias at explicabo aperiam reprehenderit culpa nihil,
@@ -52,7 +52,7 @@ export const Summary = () => {
       </div>
       <div className="flex justify-center items-center gap-4">
         <div
-          className={`${handleColors} w-[50px] h-[50px] rounded-full ring-2 ring-offset-2 ring-light-grey`}
+          className={`${handleColors} lg:w-[50px] lg:h-[50px] w-10 h-10 rounded-full ring-2 ring-offset-2 ring-light-grey`}
         ></div>
         <p className="text-2xl">
           {selectedColor?.name} - ${selectedColor?.price}
