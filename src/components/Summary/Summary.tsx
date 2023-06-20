@@ -62,7 +62,7 @@ export const Summary = () => {
         <hr className="w-8 border mb-2" />
         <p className="text-lg font-bold tracking-widest">ACCESSORIES</p>
       </div>
-      <ul className="flex flex-col justify-center items-center list-disc">
+      <ul className="flex flex-col justify-center lg:items-center items-start list-disc">
         {selectedAccessories.length > 0 ? (
           selectedAccessories.map((accessory) => (
             <li
