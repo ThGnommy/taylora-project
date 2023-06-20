@@ -30,6 +30,9 @@ export default {
         'white-fadeout':
           'linear-gradient(to bottom,white,rgba(255,255,255,0));',
       },
+      screens: {
+        laptop: '1024px',
+      },
     },
   },
   plugins: [],

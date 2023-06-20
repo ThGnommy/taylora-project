@@ -10,7 +10,7 @@ export const Layout = ({ children }: LayoutProps) => {
   return (
     <main className="flex flex-col justify-center items-center w-full">
       <Header />
-      <div className="flex justify-center w-full p-11 overflow-hidden">
+      <div className="flex justify-center w-full py-11 overflow-hidden">
         {children}
       </div>
       <Footer />
