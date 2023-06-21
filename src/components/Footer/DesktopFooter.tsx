@@ -45,7 +45,11 @@ export const DesktopFooter = () => {
     const defaultImage = findSelectedCar()[0]?.default_image
 
     if (defaultImage !== undefined) {
-      const img = `${import.meta.env.BASE_URL}${defaultImage}`
+      const publicString: string = import.meta.env.DEV ? '/public' : ''
+
+      const img = `${publicString}${
+        import.meta.env.VITE_BASE_URL
+      }${defaultImage}`
       setCurrentCarImage(img)
     }
   }, [findSelectedCar])
