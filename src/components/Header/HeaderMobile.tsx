@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useApp } from '../../contexts/App/useApp'
 
 export const HeaderMobile = () => {

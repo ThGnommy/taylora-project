@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect } from 'react'
 import { Tooltip } from '../Utility/Tooltip'
 import { ColorListProps, ColorType } from './types'
 import { useApp } from '../../contexts/App/useApp'
@@ -14,13 +14,7 @@ export const BMWi3Colors = ({
   colorState: ColorType
   handleColorSelection: (color: ColorType) => void
 }) => {
-  const {
-    findSelectedCar,
-    setSelectedColor,
-    selectedColor,
-    totalPrice,
-    setTotalPrice,
-  } = useApp()
+  const { findSelectedCar, setSelectedColor } = useApp()
 
   const colorName =
     name === 'White'
