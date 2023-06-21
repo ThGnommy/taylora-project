@@ -34,10 +34,10 @@ export const StepOne = () => {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
+        transition: { duration: 0.5, delay: 0.5, ease: easeInOut },
       }}
-      exit={{ x: 20, transition: { duration: 0.5 } }}
-      className="flex justify-center gap-11 items-center flex-wrap pb-28 lg:mt-[170px] px-6"
+      exit={{ opacity: 0, x: 20, transition: { duration: 0.2 } }}
+      className="absolute flex justify-center gap-11 items-center flex-wrap pb-28 lg:mt-[170px] px-6"
     >
       {carsData.map((car, i) => (
         <Car

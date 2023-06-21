@@ -24,10 +24,10 @@ export const Summary = () => {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
+        transition: { duration: 0.5, delay: 0.5, ease: easeInOut },
       }}
-      exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
-      className="w-full max-w-[1000px] flex flex-col justify-center lg:items-center items-start px-12 pb-28 lg:mt-[170px]"
+      exit={{ opacity: 0, x: 20, transition: { duration: 0.2 } }}
+      className="absolute w-full max-w-[1000px] flex flex-col justify-center lg:items-center items-start px-12 pb-28 lg:mt-[170px]"
     >
       <div className="flex flex-col justify-center items-start lg:items-center mb-9">
         <hr className="w-8 border mb-2" />

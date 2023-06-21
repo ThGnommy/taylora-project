@@ -2,11 +2,11 @@ import { useApp } from '../../contexts/App/useApp'
 import { Step } from '../../contexts/App/types'
 
 export const HeaderDesktop = () => {
-  const { step, handleStep, selectedCar } = useApp()
+  const { step, setStep, selectedCar } = useApp()
 
   const handleSelection = (step: Step) => {
     if (selectedCar === null) return
-    handleStep(step)
+    setStep(step)
   }
 
   const modelsColor =

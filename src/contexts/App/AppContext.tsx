@@ -5,7 +5,7 @@ import { AccessoryProps } from '../../components/StepThree/types'
 import { ColorListProps } from '../../components/StepTwo/types'
 interface AppContextProps {
   step: Step
-  handleStep: (n: Step) => void
+  setStep: (n: Step) => void
   selectedCar: string | null
   setSelectedCar: (n: string | null) => void
   totalPrice: number
@@ -30,16 +30,12 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
     AccessoryProps[]
   >([])
 
-  const handleStep = (n: Step) => {
-    setStep(n)
-  }
-
   const findSelectedCar = () =>
     carsData.filter((car) => car.name === selectedCar)
 
   const values = {
     step,
-    handleStep,
+    setStep,
     selectedCar,
     setSelectedCar,
     totalPrice,

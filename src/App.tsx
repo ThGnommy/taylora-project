@@ -11,10 +11,16 @@ const App = () => {
 
   return (
     <Layout>
-      <AnimatePresence>
-        {step === 1 && <StepOne />}
-        {step === 2 && <StepTwo />}
+      <AnimatePresence mode="wait" initial={false}>
+        {step === 1 && <StepOne key="step-one" />}
+      </AnimatePresence>
+      <AnimatePresence mode="wait" initial={false}>
+        {step === 2 && <StepTwo key="step-two" />}
+      </AnimatePresence>
+      <AnimatePresence mode="wait" initial={false}>
         {step === 3 && <StepThree />}
+      </AnimatePresence>
+      <AnimatePresence mode="wait" initial={false}>
         {step === 4 && <Summary />}
       </AnimatePresence>
     </Layout>

@@ -64,10 +64,10 @@ export const StepTwo = () => {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
+        transition: { duration: 0.5, delay: 0.5, ease: easeInOut },
       }}
-      exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
-      className="flex flex-col justify-center items-center lg:mt-[170px]"
+      exit={{ opacity: 0, x: 20, transition: { duration: 0.2 } }}
+      className="absolute flex flex-col justify-center items-center lg:mt-[170px]"
     >
       <motion.img className="w-[750px] h-auto" src={img} alt="" />
       <motion.section className="flex gap-6 mt-8">

@@ -23,9 +23,9 @@ export const StepThree = () => {
       animate={{
         opacity: 1,
         x: 0,
-        transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
+        transition: { duration: 0.5, delay: 0.5, ease: easeInOut },
       }}
-      exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
+      exit={{ opacity: 0, x: 20, transition: { duration: 0.2 } }}
       className="w-full max-w-[1000px] flex flex-col gap-5 mb-[200px] lg:mt-[170px] px-6"
     >
       {accessoriesList.map((accessory) => (

@@ -4,8 +4,7 @@ import { ArrowSvg } from '../Utility/Icons'
 import { useCallback, useEffect, useState } from 'react'
 
 export const DesktopFooter = () => {
-  const { step, handleStep, totalPrice, selectedCar, findSelectedCar } =
-    useApp()
+  const { step, setStep, totalPrice, selectedCar, findSelectedCar } = useApp()
 
   const [currentCarImage, setCurrentCarImage] = useState<string>('')
 
@@ -13,14 +12,14 @@ export const DesktopFooter = () => {
     if (step === 4 || selectedCar === null) return
 
     const s = step + 1
-    handleStep(s as Step)
+    setStep(s as Step)
   }
 
   const prevStep = () => {
     if (step === 1) return
 
     const s = step - 1
-    handleStep(s as Step)
+    setStep(s as Step)
   }
 
   const handleButtonText =
@@ -49,8 +48,6 @@ export const DesktopFooter = () => {
       const img = `${
         import.meta.env.VITE_BASE_URL
       }${publicString}${defaultImage}`
-
-      console.log(img)
 
       setCurrentCarImage(img)
     }

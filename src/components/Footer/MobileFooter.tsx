@@ -3,20 +3,20 @@ import { Step } from '../../contexts/App/types'
 import { ArrowSvg } from '../Utility/Icons'
 
 export const MobileFooter = () => {
-  const { step, selectedCar, handleStep } = useApp()
+  const { step, selectedCar, setStep } = useApp()
 
   const nextStep = () => {
     if (step === 4 || selectedCar === null) return
 
     const s = step + 1
-    handleStep(s as Step)
+    setStep(s as Step)
   }
 
   const prevStep = () => {
     if (step === 1) return
 
     const s = step - 1
-    handleStep(s as Step)
+    setStep(s as Step)
   }
 
   const handleButtonText =
