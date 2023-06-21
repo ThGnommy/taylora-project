@@ -54,7 +54,7 @@ export const Summary = () => {
         <div
           className={`${handleColors} lg:w-[50px] lg:h-[50px] w-10 h-10 rounded-full ring-2 ring-offset-2 ring-light-grey`}
         ></div>
-        <p className="text-2xl">
+        <p className="text-base lg:text-2xl">
           {selectedColor?.name} - ${selectedColor?.price}
         </p>
       </div>
