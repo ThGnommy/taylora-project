@@ -27,9 +27,9 @@ export const Summary = () => {
         transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
       }}
       exit={{ opacity: 0, x: 20, transition: { duration: 0.5 } }}
-      className="w-full max-w-[1000px] flex flex-col justify-center lg:items-center items-start px-12 pb-28 mt-[170px]"
+      className="w-full max-w-[1000px] flex flex-col justify-center lg:items-center items-start px-12 pb-28 lg:mt-[170px]"
     >
-      <div className="flex flex-col justify-center items-center mb-9">
+      <div className="flex flex-col justify-center items-start lg:items-center mb-9">
         <hr className="w-8 border mb-2" />
         <p className="text-lg font-bold tracking-widest">MODEL</p>
       </div>
@@ -46,7 +46,7 @@ export const Summary = () => {
         quis totam cupiditate dolores in quisquam magnam inventore nobis, rem
         adipisci eveniet illum.
       </p>
-      <div className="flex flex-col justify-center items-center mb-9">
+      <div className="flex flex-col justify-center items-start lg:items-center mb-9">
         <hr className="w-8 border mb-2" />
         <p className="text-lg font-bold tracking-widest">COLOR</p>
       </div>
@@ -58,7 +58,7 @@ export const Summary = () => {
           {selectedColor?.name} - ${selectedColor?.price}
         </p>
       </div>
-      <div className="flex flex-col justify-center items-center mb-9 mt-16">
+      <div className="flex flex-col justify-center items-start lg:items-center mb-9 mt-16">
         <hr className="w-8 border mb-2" />
         <p className="text-lg font-bold tracking-widest">ACCESSORIES</p>
       </div>

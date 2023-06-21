@@ -3,8 +3,20 @@ import carsData from '../../cars-data.json'
 import bmwi3Image from '../../assets/cars/bmw_i3/white.png'
 import bmwi8Image from '../../assets/cars/bmw_i8/black.png'
 import { motion, easeInOut } from 'framer-motion'
+import { useEffect } from 'react'
+import { useApp } from '../../contexts/App/useApp'
 
 export const StepOne = () => {
+  const { setSelectedAccessories, setTotalPrice, findSelectedCar } = useApp()
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const defaultPrice = findSelectedCar()[0].starter_price
+    setSelectedAccessories([])
+    setTotalPrice(Number(defaultPrice))
+  }, [findSelectedCar, setSelectedAccessories, setTotalPrice])
+
   return (
     <motion.div
       key="step-one"
@@ -15,7 +27,7 @@ export const StepOne = () => {
         transition: { duration: 0.5, delay: 0.2, ease: easeInOut },
       }}
       exit={{ x: 20, transition: { duration: 0.5 } }}
-      className="flex justify-center gap-11 items-center flex-wrap pb-28 mt-[170px]"
+      className="flex justify-center gap-11 items-center flex-wrap pb-28 lg:mt-[170px] px-6"
     >
       {carsData.map((car, i) => (
         <Car

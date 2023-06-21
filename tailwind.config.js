@@ -16,6 +16,13 @@ export default {
       },
       keyframes: {
         checkBounce: {
+          '0%': { transform: 'scale(1) translateY(-50%)' },
+          '25%': { transform: 'scale(1.1) translateY(-50%)' },
+          '50%': { transform: 'scale(1) translateY(-50%)' },
+          '75%': { transform: 'scale(1.02) translateY(-50%)' },
+          '100%': { transform: 'scale(1) translateY(-50%)' },
+        },
+        checkBounce2: {
           '0%': { transform: 'scale(1) translateY(-50%) translateX(50%)' },
           '25%': { transform: 'scale(1.1) translateY(-50%) translateX(50%)' },
           '50%': { transform: 'scale(1) translateY(-50%) translateX(50%)' },
@@ -25,6 +32,7 @@ export default {
       },
       animation: {
         'custom-bounce': 'checkBounce .6s ease-in-out',
+        'custom-bounce-2': 'checkBounce2 .6s ease-in-out',
       },
       backgroundImage: {
         'white-fadeout':

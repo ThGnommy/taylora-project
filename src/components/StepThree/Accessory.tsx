@@ -14,7 +14,7 @@ export const Accessory = ({ id, name, price }: AccessoryProps) => {
   const isSelected = selectedAccessories.some((acc) => acc.id === id)
 
   const checkStyles = isSelected
-    ? 'bg-custom-yellow animate-custom-bounce'
+    ? 'bg-custom-yellow animate-custom-bounce-2'
     : 'scale-[0.65] bg-white border-2 border-light-grey'
 
   const formattedPrice = Number(price).toLocaleString().replace(',', '.')

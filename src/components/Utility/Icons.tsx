@@ -36,7 +36,7 @@ export const CarCheckSvg = ({
     width="44px"
     height="44px"
     viewBox="0 0 44 44"
-    className={`inline transition-opacity duration-150 ${
+    className={`transition-opacity duration-150 ${
       selectedCar ? 'opacity-100' : 'opacity-0'
     }`}
   >

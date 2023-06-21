@@ -1,4 +1,4 @@
-import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { Layout } from './components/Layout/Layout'
 import StepOne from './components/StepOne'
 import StepThree from './components/StepThree'
