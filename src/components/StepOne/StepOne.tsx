@@ -7,15 +7,25 @@ import { useEffect } from 'react'
 import { useApp } from '../../contexts/App/useApp'
 
 export const StepOne = () => {
-  const { setSelectedAccessories, setTotalPrice, findSelectedCar } = useApp()
+  const {
+    setSelectedAccessories,
+    setTotalPrice,
+    findSelectedCar,
+    selectedCar,
+  } = useApp()
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const defaultPrice = findSelectedCar()[0].starter_price
     setSelectedAccessories([])
-    setTotalPrice(Number(defaultPrice))
-  }, [findSelectedCar, setSelectedAccessories, setTotalPrice])
+
+    if (selectedCar) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      const defaultPrice = findSelectedCar()[0].starter_price
+      setTotalPrice(Number(defaultPrice))
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <motion.div
