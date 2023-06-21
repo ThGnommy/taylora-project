@@ -41,15 +41,17 @@ export const DesktopFooter = () => {
   const getDefaultImage = useCallback(() => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-
     const defaultImage = findSelectedCar()[0]?.default_image
 
     if (defaultImage !== undefined) {
-      const publicString: string = import.meta.env.DEV ? '/public' : ''
+      const publicString: string = import.meta.env.DEV ? 'public' : '/'
 
-      const img = `${publicString}${
+      const img = `${
         import.meta.env.VITE_BASE_URL
-      }${defaultImage}`
+      }${publicString}${defaultImage}`
+
+      console.log(img)
+
       setCurrentCarImage(img)
     }
   }, [findSelectedCar])
