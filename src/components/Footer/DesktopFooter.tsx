@@ -2,14 +2,19 @@ import { useApp } from '../../contexts/App/useApp'
 import { Step } from '../../contexts/App/types'
 import { ArrowSvg } from '../Utility/Icons'
 import { useCallback, useEffect, useState } from 'react'
+import { Alert } from '../Utility/Alert'
 
 export const DesktopFooter = () => {
   const { step, setStep, totalPrice, selectedCar, findSelectedCar } = useApp()
 
   const [currentCarImage, setCurrentCarImage] = useState<string>('')
+  const [showAlert, setShowAlert] = useState<boolean>(false)
 
   const nextStep = () => {
-    if (step === 4 || selectedCar === null) return
+    if (selectedCar === null) {
+      setShowAlert(true)
+      return
+    } else if (step === 4 || selectedCar === null) return
 
     const s = step + 1
     setStep(s as Step)
@@ -56,6 +61,14 @@ export const DesktopFooter = () => {
   useEffect(() => {
     getDefaultImage()
   }, [getDefaultImage])
+
+  const handleAlert = useCallback(() => {
+    if (selectedCar) setShowAlert(false)
+  }, [selectedCar])
+
+  useEffect(() => {
+    handleAlert()
+  }, [handleAlert])
 
   return (
     <footer className="w-full h-[100px] py-1 px-8 z-20 fixed bg-white bottom-0 flex justify-between items-center shadow-footer select-none">
@@ -107,6 +120,7 @@ export const DesktopFooter = () => {
           />
         </div>
       </section>
+      <Alert isVisible={showAlert} />
     </footer>
   )
 }
